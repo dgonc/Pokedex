@@ -1,12 +1,15 @@
-import Hello from './Hello';
+import MyTitle from './components/MyTitle';
 
 import './App.css'
 
 function App() {
 
 
-  return Hello();
-
+  return (
+  <div>
+    <MyTitle />
+  </div>
+  );
 }
 
 export default App
