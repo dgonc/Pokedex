@@ -17,9 +17,12 @@ function App() {
 
   return (
   <div>
-    <PokemonCard pokemon={pokemonList[0]} />
+    {pokemonList.map((pokemon) => {
+      return <PokemonCard pokemon={pokemon}/>}
+    )}
   </div>
   );
 }
 
 export default App
+
