@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 
-export default function Navbar({ navigation, poke }) {
-  const [pokemonIndex, setPokemonIndex] = navigation;
+export default function Navbar({ setPokemonIndex, poke }) {
+  const handleClick = (name) => {
+    name === "pikachu" ? alert("Pikachu ! Pikachu !!") : null;
+  };
 
   return (
     <div>
@@ -9,6 +11,7 @@ export default function Navbar({ navigation, poke }) {
         <button
           key={poke.name}
           onClick={() => {
+            handleClick(poke.name);
             setPokemonIndex(poke.id - 1);
           }}
         >
@@ -20,10 +23,10 @@ export default function Navbar({ navigation, poke }) {
 }
 
 Navbar.propTypes = {
-  poke: PropTypes.shape({
+  poke: PropTypes.objectOf({
     id: PropTypes.string,
     name: PropTypes.string.isRequired,
     map: PropTypes.array,
   }),
-  navigation: PropTypes.element,
+  navigation: PropTypes.array,
 };
